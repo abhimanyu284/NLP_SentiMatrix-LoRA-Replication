@@ -1,7 +1,6 @@
-SST-2: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/SST-2%20(2%20Classes).csv
-
-CARER Emotion: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Emotion%20Dataset%20(Small).csv
-
-Amazon E-Commerce (5-class): https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/E-Commerce%20Reviews%20(5%20Classes).csv
-
-SemEval-2014 ABSA: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Laptop%20%2B%20Restaurant%20-%20ABSA.csv
+| Dataset | Link |
+|---|---|
+| SST-2 | [SST-2 (2 Classes).csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/SST-2%20(2%20Classes).csv) |
+| CARER Emotion | [Emotion Dataset (Small).csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Emotion%20Dataset%20(Small).csv) |
+| Amazon E-Commerce (5-class) | [E-Commerce Reviews (5 Classes).csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/E-Commerce%20Reviews%20(5%20Classes).csv) |
+| SemEval-2014 ABSA | [Laptop + Restaurant - ABSA.csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Laptop%20%2B%20Restaurant%20-%20ABSA.csv) |
