@@ -14,30 +14,24 @@ LoRA trains only about 0.2% to 1.2% of each model's parameters (299K to 1.2M). O
 ```
 SentiMatrix-LoRA-Sentiment-Analysis/
 │
+├── Code Files/
+│   ├── nlp-replication-1.ipynb      (early SST-2 only version)
+│   ├── nlp-replication-2.ipynb      (multi-dataset, single seed)
+│   └── nlp-replication-3.ipynb      (final: all 4 datasets, 3 seeds)
+│
 ├── Dataset/
-│   ├── SST-2 (2 Classes).csv
-│   ├── Emotion Dataset (Small).csv
-│   ├── E-Commerce Reviews (5 Classes).csv
-│   ├── Laptop + Restaurant - ABSA.csv
-│   └── Dataset_links.md
+│   └── Datasetlink.md
 │
 ├── Documents/
-│   └── SentiMatrix_Project_Report.docx
+│   ├── Research Paper.pdf
+│   └── SentiMatrix LoRA Replication Project Report.docx
 │
 ├── Results/
 │   ├── Graphs/
-│   │   ├── confusion_sst2.png
-│   │   ├── curves_sst2.png
-│   │   ├── ours_vs_paper_sst2.png
-│   │   ├── confusion_emotion.png
-│   │   ├── curves_emotion.png
-│   │   ├── ours_vs_paper_emotion.png
-│   │   ├── confusion_ecom5.png
-│   │   ├── curves_ecom5.png
-│   │   ├── ours_vs_paper_ecom5.png
-│   │   ├── confusion_absa.png
-│   │   ├── curves_absa.png
-│   │   └── ours_vs_paper_absa.png
+│   │   ├── confusion_sst2.png, curves_sst2.png, ours_vs_paper_sst2.png
+│   │   ├── confusion_emotion.png, curves_emotion.png, ours_vs_paper_emotion.png
+│   │   ├── confusion_ecom5.png, curves_ecom5.png, ours_vs_paper_ecom5.png
+│   │   └── confusion_absa.png, curves_absa.png, ours_vs_paper_absa.png
 │   │
 │   └── Tables/
 │       ├── table_sst2_distilbert.png
@@ -46,12 +40,11 @@ SentiMatrix-LoRA-Sentiment-Analysis/
 │       ├── table_ecom5.png
 │       └── table_absa.png
 │
-├── Src/
-│   └── SentiMatrix_LoRA_Replication.ipynb
-│
-├── requirements.txt
-└── README.md
+├── README.md
+└── Requirement.txt
 ```
+
+> `nlp-replication-3.ipynb` is the final notebook that produced every result in this README. Versions 1 and 2 are earlier iterations kept for reference.
 
 ---
 
@@ -74,7 +67,7 @@ This project asks whether those claims can be reproduced independently. We imple
 | Amazon E-Commerce | Review rating | 5 | 22,641 | 18,112 / 2,264 / 2,265 | BERT-base-multilingual |
 | SemEval-2014 ABSA (Laptop + Restaurant) | Aspect-based sentiment | 3 | 5,914 | 4,731 / 591 / 592 | DeBERTa-v3-base |
 
-**Download Links** (all from the authors' repository, [ELTE-DSED/senti-matrix](https://github.com/ELTE-DSED/senti-matrix/tree/main/Dataset)):
+**Download Links** (all from the authors' repository, [ELTE-DSED/senti-matrix](https://github.com/ELTE-DSED/senti-matrix/tree/main/Dataset); also listed in [Dataset/Datasetlink.md](Dataset/Datasetlink.md)):
 - SST-2: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/SST-2%20(2%20Classes).csv
 - CARER Emotion: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Emotion%20Dataset%20(Small).csv
 - Amazon E-Commerce (5-class): https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/E-Commerce%20Reviews%20(5%20Classes).csv
@@ -107,9 +100,7 @@ LoRA adapters are injected into the attention projections with the `peft` librar
 
 For a frozen weight matrix W, LoRA learns a low-rank update:
 
-```latex
-W' = W + \frac{\alpha}{r} B A, \quad A \in \mathbb{R}^{r \times k}, \; B \in \mathbb{R}^{d \times r}
-```
+$$W' = W + \frac{\alpha}{r} B A, \quad A \in \mathbb{R}^{r \times k}, \; B \in \mathbb{R}^{d \times r}$$
 
 Only A and B are trained, and r is far smaller than d and k. This is why only a small fraction of parameters is updated.
 
@@ -257,25 +248,22 @@ git clone https://github.com/abhimanyu284/SentiMatrix-LoRA-Sentiment-Analysis
 cd SentiMatrix-LoRA-Sentiment-Analysis
 ```
 
-**2. Open the notebook on Kaggle**
+**2. Install dependencies** (needed only for local runs; Kaggle already has most of them)
+```bash
+pip install -r Requirement.txt
+```
 
-Create a new Kaggle notebook and import `Src/SentiMatrix_LoRA_Replication.ipynb` (File → Import Notebook).
+**3. Open the notebook on Kaggle**
 
-**3. Set up the session**
+Create a new Kaggle notebook and import `Code Files/nlp-replication-3.ipynb` (File → Import Notebook). In the notebook settings choose **Accelerator: GPU T4** and turn **Internet: On**.
 
-In the notebook settings, choose **Accelerator: GPU T4** and turn **Internet: On**.
+**4. Run Cell 1**
 
-**4. Install dependencies**
+It installs `sentencepiece` and removes the incompatible `torchao`. Then **restart the session** and run the remaining cells in order.
 
-Run **Cell 1**, which installs `sentencepiece` and removes the incompatible `torchao`. Then **restart the session**. (To run locally instead: `pip install -r requirements.txt`.)
+**5. Automatic downloads**
 
-**5. Run the remaining cells in order**
-
-The notebook automatically:
-- downloads the datasets by cloning the authors' repository (no manual download needed; the CSVs in `Dataset/` are included for reference),
-- trains LoRA on all four datasets with three seeds each,
-- saves tables and figures to `/kaggle/working/outputs/`,
-- zips everything to `lora_replication_outputs.zip`.
+The notebook downloads the datasets by cloning the authors' repository, so no manual download is needed. It then trains LoRA on all four datasets with three seeds each, saves tables and figures to `/kaggle/working/outputs/`, and zips them to `lora_replication_outputs.zip`.
 
 **6. Keep your results**
 
@@ -308,9 +296,6 @@ Authors' code: https://github.com/ELTE-DSED/senti-matrix
 
 ## Authors
 
-**Abhimanyu Nema**
-**Krishka Kate**
-**Divyanshi Mundhra**
+**Abhimanyu Nema, Krishka Kate, Divyanshi Mundhra**
 
-B.Tech AI & DS
-NMIMS Indore
+B.Tech AI & DS, NMIMS Indore
