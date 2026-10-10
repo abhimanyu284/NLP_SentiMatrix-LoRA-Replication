@@ -1,12 +1,7 @@
-## Datasets Used
+SST-2: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/SST-2%20(2%20Classes).csv
 
-All datasets are taken from the authors' repository: [ELTE-DSED/senti-matrix](https://github.com/ELTE-DSED/senti-matrix/tree/main/Dataset)
+CARER Emotion: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Emotion%20Dataset%20(Small).csv
 
-| Dataset | Task | Classes | Rows used | Train / Val / Test | Model | Download |
-|---|---|---|---|---|---|---|
-| SST-2 | Sentiment | 2 | 9,613 | 7,690 / 961 / 962 | DistilBERT, RoBERTa-base | [SST-2 (2 Classes).csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/SST-2%20(2%20Classes).csv) |
-| CARER Emotion | Emotion detection | 6 | 25,000 (subset) | 20,000 / 2,500 / 2,500 | DistilBERT | [Emotion Dataset (Small).csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Emotion%20Dataset%20(Small).csv) |
-| Amazon E-Commerce | Review rating | 5 | 22,641 | 18,112 / 2,264 / 2,265 | BERT-base-multilingual | [E-Commerce Reviews (5 Classes).csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/E-Commerce%20Reviews%20(5%20Classes).csv) |
-| SemEval-2014 ABSA | Aspect-based sentiment | 3 | 5,914 | 4,731 / 591 / 592 | DeBERTa-v3-base | [Laptop + Restaurant - ABSA.csv](https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Laptop%20%2B%20Restaurant%20-%20ABSA.csv) |
+Amazon E-Commerce (5-class): https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/E-Commerce%20Reviews%20(5%20Classes).csv
 
-Place the downloaded CSV files in the `Dataset/` folder of this repository. The Kaggle notebook also downloads them automatically by cloning the authors' repo.
+SemEval-2014 ABSA: https://github.com/ELTE-DSED/senti-matrix/raw/main/Dataset/Laptop%20%2B%20Restaurant%20-%20ABSA.csv
