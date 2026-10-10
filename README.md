@@ -15,7 +15,7 @@ LoRA is run on four of the paper's datasets (SST-2, CARER Emotion, Amazon E-Comm
 SentiMatrix-LoRA-Replication/
 │
 ├── Documents/
-│   ├── Presentation.pptx
+│  
 │   └── s10994-026-07161-4.pdf          # original paper
 │
 ├── Results/
