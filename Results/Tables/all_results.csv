@@ -1,0 +1,56 @@
+Dataset | Model,Metric,Paper (LoRA),Ours,Difference,Within paper ±std
+SST-2 (2-class) | LoRA-DistilBERT,Accuracy,89.02 ± 0.95,88.98 ± 0.31,-0.04,yes
+SST-2 (2-class) | LoRA-DistilBERT,Precision,90.53 ± 2.70,89.02 ± 0.39,-1.51,yes
+SST-2 (2-class) | LoRA-DistilBERT,Recall,88.13 ± 3.96,88.95 ± 0.28,0.82,yes
+SST-2 (2-class) | LoRA-DistilBERT,F1,89.22 ± 1.18,88.96 ± 0.30,-0.26,yes
+SST-2 (2-class) | LoRA-DistilBERT,Similarity,90.76 ± 0.71,90.82 ± 0.09,0.06,yes
+SST-2 (2-class) | LoRA-DistilBERT,Confidence,92.06 ± 2.74,93.92 ± 0.78,1.86,yes
+SST-2 (2-class) | LoRA-DistilBERT,ECE,3.86 ± 1.71,5.07 ± 0.78,1.21,yes
+SST-2 (2-class) | LoRA-DistilBERT,Brier,0.170 ± 0.010,0.168 ± 0.002,-0.002,yes
+SST-2 (2-class) | LoRA-DistilBERT,Trainable params,758K,758018,,
+SST-2 (2-class) | LoRA-DistilBERT,Training time (s),195,159 ± 14,,
+SST-2 (2-class) | LoRA-DistilBERT,Peak GPU memory (GB),0.46,0.45 ± 0.00,,
+SST-2 (2-class) | LoRA-RoBERTa,Accuracy,93.28 ± 0.91,94.07 ± 0.63,0.79,yes
+SST-2 (2-class) | LoRA-RoBERTa,Precision,93.42 ± 1.60,94.12 ± 0.65,0.7,yes
+SST-2 (2-class) | LoRA-RoBERTa,Recall,93.64 ± 2.14,94.03 ± 0.63,0.39,yes
+SST-2 (2-class) | LoRA-RoBERTa,F1,93.51 ± 0.91,94.06 ± 0.63,0.55,yes
+SST-2 (2-class) | LoRA-RoBERTa,Similarity,94.28 ± 0.61,94.76 ± 0.56,0.48,yes
+SST-2 (2-class) | LoRA-RoBERTa,Confidence,95.67 ± 2.68,97.99 ± 0.26,2.32,yes
+SST-2 (2-class) | LoRA-RoBERTa,ECE,3.15 ± 1.04,3.97 ± 0.29,0.82,yes
+SST-2 (2-class) | LoRA-RoBERTa,Brier,0.110 ± 0.010,0.099 ± 0.011,-0.011,no
+SST-2 (2-class) | LoRA-RoBERTa,Trainable params,1.20M,1200386,,
+SST-2 (2-class) | LoRA-RoBERTa,Training time (s),392,337 ± 42,,
+SST-2 (2-class) | LoRA-RoBERTa,Peak GPU memory (GB),0.92,0.90 ± 0.00,,
+CARER Emotion (6-class) | LoRA-DistilBERT,Accuracy,93.22 ± 0.03,92.85 ± 0.18,-0.37,no
+CARER Emotion (6-class) | LoRA-DistilBERT,Precision,89.85 ± 0.03,88.92 ± 0.35,-0.93,no
+CARER Emotion (6-class) | LoRA-DistilBERT,Recall,90.60 ± 0.03,90.56 ± 0.24,-0.04,no
+CARER Emotion (6-class) | LoRA-DistilBERT,F1,90.20 ± 0.03,89.66 ± 0.16,-0.54,no
+CARER Emotion (6-class) | LoRA-DistilBERT,Similarity,92.45 ± 0.01,94.84 ± 0.23,2.39,no
+CARER Emotion (6-class) | LoRA-DistilBERT,Confidence,94.70 ± 0.03,94.89 ± 0.04,0.19,no
+CARER Emotion (6-class) | LoRA-DistilBERT,ECE,1.73 ± 0.12,2.07 ± 0.26,0.34,no
+CARER Emotion (6-class) | LoRA-DistilBERT,Brier,0.083 ± 0.000,0.089 ± 0.004,0.006,–
+CARER Emotion (6-class) | LoRA-DistilBERT,Trainable params,742.66K,742662,,
+CARER Emotion (6-class) | LoRA-DistilBERT,Training time (s),364,105 ± 13,,
+CARER Emotion (6-class) | LoRA-DistilBERT,Peak GPU memory (GB),1.15,0.74 ± 0.00,,
+Amazon E-Commerce (5-class) | LoRA-mBERT,Accuracy,67.63 ± 0.26,67.26 ± 0.16,-0.37,no
+Amazon E-Commerce (5-class) | LoRA-mBERT,Precision,53.88 ± 2.34,54.55 ± 1.28,0.67,yes
+Amazon E-Commerce (5-class) | LoRA-mBERT,Recall,46.05 ± 1.07,47.76 ± 0.83,1.71,no
+Amazon E-Commerce (5-class) | LoRA-mBERT,F1,47.37 ± 1.48,49.31 ± 0.87,1.94,no
+Amazon E-Commerce (5-class) | LoRA-mBERT,Similarity,74.06 ± 0.03,73.92 ± 0.31,-0.14,no
+Amazon E-Commerce (5-class) | LoRA-mBERT,Confidence,71.03 ± 0.37,69.62 ± 2.13,-1.41,no
+Amazon E-Commerce (5-class) | LoRA-mBERT,ECE,3.67 ± 0.35,3.70 ± 1.06,0.03,yes
+Amazon E-Commerce (5-class) | LoRA-mBERT,Brier,0.430 ± 0.000,0.431 ± 0.004,0.001,–
+Amazon E-Commerce (5-class) | LoRA-mBERT,Trainable params,298.76K,298757,,
+Amazon E-Commerce (5-class) | LoRA-mBERT,Training time (s),413,369 ± 3,,
+Amazon E-Commerce (5-class) | LoRA-mBERT,Peak GPU memory (GB),1.22,1.22 ± 0.00,,
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Accuracy,80.74 ± 0.00,79.73 ± 0.45,-1.01,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Precision,79.57 ± 0.00,79.67 ± 0.49,0.1,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Recall,80.74 ± 0.00,79.73 ± 0.45,-1.01,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",F1,79.84 ± 0.00,78.66 ± 0.78,-1.18,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Similarity,84.38 ± 0.00,82.51 ± 0.17,-1.87,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Confidence,83.92 ± 0.00,84.31 ± 2.96,0.39,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",ECE,4.34 ± 0.00,6.18 ± 2.18,1.84,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Brier,0.270 ± 0.000,0.309 ± 0.005,0.039,–
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Trainable params,334.08K,334083,,
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Training time (s),2510,351 ± 62,,
+"SemEval-2014 ABSA (Laptop+Restaurant, 3-class) | LoRA-DeBERTa-v3",Peak GPU memory (GB),2.50,1.59 ± 0.00,,

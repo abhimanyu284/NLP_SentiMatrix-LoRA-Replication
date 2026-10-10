@@ -1,0 +1,12 @@
+Metric,Paper (LoRA),Ours,Difference,Within paper ±std
+Accuracy,89.02 ± 0.95,88.98 ± 0.31,-0.04,yes
+Precision,90.53 ± 2.70,89.02 ± 0.39,-1.51,yes
+Recall,88.13 ± 3.96,88.95 ± 0.28,0.82,yes
+F1,89.22 ± 1.18,88.96 ± 0.30,-0.26,yes
+Similarity,90.76 ± 0.71,90.82 ± 0.09,0.06,yes
+Confidence,92.06 ± 2.74,93.92 ± 0.78,1.86,yes
+ECE,3.86 ± 1.71,5.07 ± 0.78,1.21,yes
+Brier,0.170 ± 0.010,0.168 ± 0.002,-0.002,yes
+Trainable params,758K,758018,,
+Training time (s),195,159 ± 14,,
+Peak GPU memory (GB),0.46,0.45 ± 0.00,,
